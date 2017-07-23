@@ -13,7 +13,6 @@ a:hover, a:focus {
   display: block;
   padding: 80px 20px;
   text-align: center;
-  width: 100%;
 }
 .square-block a:hover{
   background-color: #27AE60;
@@ -23,15 +22,28 @@ a:hover, a:focus {
 .ssb-icon {
   color: #fff;
   display: inline-block;
-  font-size: 32px;
+  font-size: 48px;
   margin: 0 0 20px;
 }
 
 h2.ssb-title {
   color: #fff;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 200;
   margin:0;
   padding:0;
   text-transform: uppercase;
+}
+.navbar-text{
+font-size: 16px;
+border-radius: 0px;
+}
+.bg-footer{
+    background-color: #2f2f2f;
+    color: #fff;
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
 }
