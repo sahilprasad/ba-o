@@ -6,16 +6,17 @@ a:hover, a:focus {
   position:relative;
   overflow:hidden;
   margin:20px auto;
+  border-radius: 20px;
   }
 .square-block a {
-  border-radius: 10px;
+  border-radius: 20px;
   display: block;
   padding: 80px 20px;
   text-align: center;
 }
 .square-block a:hover{
   /*background-color: #27AE60;*/
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .ssb-icon {
