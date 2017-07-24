@@ -8,25 +8,29 @@ let dryer = false
 
 firebase.database().ref(`/`)
   .on('value', snapshot => {
-    downstairsBathroom = snapshot.val().downstairsBathroom
-    upstairsBathroom = snapshot.val().downstairsBathroom
-    washer = snapshot.val().washer
-    dryer = snapshot.val().dryer
+    var dryer = document.getElementById("dryer");
+    var washer = document.getElementById("washer");
+    var upstairsBathroom = document.getElementById("upstairsBathroom");
+    var downstairsBathroom = document.getElementById("downstairsBathroom");
+    dryer.body.style.backgroundColor = snapshot.val().dryer ? "red": 'blue';
+    washer.body.style.backgroundColor = snapshot.val().washer ? "red": 'blue';
+    upstairsBathroom.body.style.backgroundColor = snapshot.val().upstairsBathroom ? "red": 'blue';
+    downstairsBathroom.body.style.backgroundColor = snapshot.val().downstairsBathroom ? "red": 'blue';
   }
 );
 
-function getStatus(room) {
-  switch (room) {
-    case 'downstairsBathroom':
-      return downstairsBathroom;
-    case 'upstairsBathroom':
-      return upstairsBathroom;
-    case 'washer':
-      return washer;
-    case 'dryer':
-      return dryer;
-  }
-}
+// function getStatus(room) {
+//   switch (room) {
+//     case 'downstairsBathroom':
+//       return downstairsBathroom;
+//     case 'upstairsBathroom':
+//       return upstairsBathroom;
+//     case 'washer':
+//       return washer;
+//     case 'dryer':
+//       return dryer;
+//   }
+// }
 
 function updateDowstairsBathroomStatus() {
   firebase.database().ref('/')
