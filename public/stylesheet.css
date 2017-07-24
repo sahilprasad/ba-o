@@ -8,14 +8,13 @@ a:hover, a:focus {
   margin:20px auto;
   }
 .square-block a {
-  background-color: #2ECC71;
   border-radius: 10px;
   display: block;
   padding: 80px 20px;
   text-align: center;
 }
 .square-block a:hover{
-  background-color: #27AE60;
+  /*background-color: #27AE60;*/
   border-radius: 5px;
 }
 
