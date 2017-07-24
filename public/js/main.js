@@ -4,50 +4,43 @@
 let downstairsBathroom = false
 let upstairsBathroom = false
 let washer = false
-let dryer = false
+let dryer1 = false
 
-firebase.database().ref(`/`)
+firebase.database().ref(`/rooms`)
   .on('value', snapshot => {
-    var dryer = document.getElementById("dryer");
-    var washer = document.getElementById("washer");
-    var upstairsBathroom = document.getElementById("upstairsBathroom");
-    var downstairsBathroom = document.getElementById("downstairsBathroom");
-    dryer.body.style.backgroundColor = snapshot.val().dryer ? "red": 'blue';
-    washer.body.style.backgroundColor = snapshot.val().washer ? "red": 'blue';
-    upstairsBathroom.body.style.backgroundColor = snapshot.val().upstairsBathroom ? "red": 'blue';
-    downstairsBathroom.body.style.backgroundColor = snapshot.val().downstairsBathroom ? "red": 'blue';
+    var dryer1 = document.getElementById("dryer1");
+    var washer1 = document.getElementById("washer");
+    var upstairsBathroom1 = document.getElementById("upstairsBathroom");
+    var downstairsBathroom1 = document.getElementById("downstairsBathroom");
+
+    dryer1.style.backgroundColor = snapshot.val().dryer1 ? "red": 'blue';
+    washer1.style.backgroundColor = snapshot.val().washer ? "red": 'blue';
+    upstairsBathroom1.style.backgroundColor = snapshot.val().upstairsBathroom ? "red": 'blue';
+    downstairsBathroom1.style.backgroundColor = snapshot.val().downstairsBathroom ? "red": 'blue';
+
   }
 );
 
-// function getStatus(room) {
-//   switch (room) {
-//     case 'downstairsBathroom':
-//       return downstairsBathroom;
-//     case 'upstairsBathroom':
-//       return upstairsBathroom;
-//     case 'washer':
-//       return washer;
-//     case 'dryer':
-//       return dryer;
-//   }
-// }
+function updateDryerStatus() {
+  firebase.database().ref().child('rooms').update({dryer1: !dryer1});
+  dryer1=!dryer1;
+  console.log(dryer1);
+}
 
 function updateDowstairsBathroomStatus() {
-  firebase.database().ref('/')
-    .set({ downstairsBathroom: !downstairsBathroom })
+  firebase.database().ref().child('rooms').update({downstairsBathroom: !downstairsBathroom});
+  downstairsBathroom=!downstairsBathroom;
 }
 
 function updateUpstairsBathroomStatus() {
-  firebase.database().ref('/')
-    .set({ upstairsBathroom: !upstairsBathroom })
+  firebase.database().ref().child('rooms').update({upstairsBathroom: !upstairsBathroom});
+  upstairsBathroom=!upstairsBathroom;
+  console.log(upstairsBathroom);
 }
 
 function updateWasherStatus() {
-  firebase.database().ref('/')
-    .set({ washer: !washer })
+  firebase.database().ref().child('rooms').update({washer: !washer});
+  washer=!washer;
 }
 
-function updateDryerStatus() {
-  firebase.database().ref('/')
-    .set({ dryer: !dryer })
-}
+
