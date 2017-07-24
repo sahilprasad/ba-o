@@ -14,7 +14,7 @@ a:focus {
 .square-block a {
     border-radius: 20px;
     display: block;
-    padding: 80px 20px;
+    padding: 60px 5px;
     text-align: center;
 }
 
@@ -32,7 +32,7 @@ a:focus {
 
 h2.ssb-title {
     color: #fff;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 200;
     margin: 0;
     padding: 0;
@@ -63,7 +63,7 @@ body {
 
 .footer {
     position: relative;
-    margin-top: -150px;
+    /*margin-top: -150px;*/
     /* negative value of footer height */
     height: 50px;
     clear: both;
