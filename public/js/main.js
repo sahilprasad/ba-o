@@ -6,6 +6,9 @@ let upstairsBathroom = false
 let washer = false
 let dryer1 = false
 
+let red = "#DC3023";
+let green = "#26A65B";
+
 firebase.database().ref(`/rooms`)
   .on('value', snapshot => {
     var dryer1 = document.getElementById("dryer1");
@@ -13,10 +16,10 @@ firebase.database().ref(`/rooms`)
     var upstairsBathroom1 = document.getElementById("upstairsBathroom");
     var downstairsBathroom1 = document.getElementById("downstairsBathroom");
 
-    dryer1.style.backgroundColor = snapshot.val().dryer1 ? "red": 'blue';
-    washer1.style.backgroundColor = snapshot.val().washer ? "red": 'blue';
-    upstairsBathroom1.style.backgroundColor = snapshot.val().upstairsBathroom ? "red": 'blue';
-    downstairsBathroom1.style.backgroundColor = snapshot.val().downstairsBathroom ? "red": 'blue';
+    dryer1.style.backgroundColor = snapshot.val().dryer1 ? red: green
+    washer1.style.backgroundColor = snapshot.val().washer ? red: green
+    upstairsBathroom1.style.backgroundColor = snapshot.val().upstairsBathroom ? red: green
+    downstairsBathroom1.style.backgroundColor = snapshot.val().downstairsBathroom ? red: green
 
   }
 );
