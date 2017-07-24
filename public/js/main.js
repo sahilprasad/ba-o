@@ -47,8 +47,3 @@ function updateDryerStatus() {
   firebase.database().ref('/')
     .set({ dryer: !dryer })
 }
-
-function clickDownstairsBathroom() {
- // const { bathroom1 } = getDowstairsBathroomStatus()
- console.log(getDownstairsBathroomStatus())
-}
